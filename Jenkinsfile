@@ -35,7 +35,7 @@ node('master') {
 																																																														              sh '''#!/bin/bash -l
 																																																															                          whoami
 																																																																		                      sudo docker build --build-arg UBUNTU_VERSION=bionic --build-arg https_proxy=$https_proxy --build-arg http_proxy=$http_proxy --build-arg ftp_proxy=$ftp_proxy -f docker/Dockerfile.pdo-dev -t pdo-dev .
-																																																																				                          cd /var/lib/jenkins/workspace/tcf_master
+																																																																				                          cd /var/lib/jenkins/workspace/test_private-data-objects_master
 																																																																							                      sudo docker run --device=/dev/isgx -v /var/run/aesmd:/var/run/aesmd pdo-dev /bin/bash
 																																																																									                          . /opt/intel/sgxsdk/environment
 																																																																												                      export VIRTUAL_ENV=`pwd`/__tools__/build/_dev
